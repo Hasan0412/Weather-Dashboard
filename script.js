@@ -4,5 +4,11 @@ function getweather() {
     const cityInput = document.getElementById('city');
     const city = cityInput.value;
   
-    const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`; 
-};
+    const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
+
+    fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      const weatherCard = document.getElementById('weatherCard');
+});
+}
