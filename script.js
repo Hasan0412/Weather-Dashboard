@@ -20,17 +20,17 @@ function getWeather() {
 
         forecast.forEach(day => {
           const date = day.date;
-          const { temp_c, condition, humidity, wind_kph } = day.day;
+          const { avgtemp_c, condition, avghumidity, maxwind_kph } = day.day;
 
           weatherHTML += `
-                      <div class="forecast-card">
-                          <h3>${date}</h3>
-                          <p><strong>Temperature:</strong> ${temp_c}°C</p>
-                          <p><strong>Condition:</strong> ${condition.text}</p>
-                          <p><strong>Humidity:</strong> ${humidity}%</p>
-                          <p><strong>Wind Speed:</strong> ${wind_kph} km/h</p>
-                      </div>
-                  `;
+            <div class="forecast-card">
+              <h3>${date}</h3>
+              <p><strong>Average Temperature:</strong> ${avgtemp_c}°C</p>
+              <p><strong>Condition:</strong> ${condition.text}</p>
+              <p><strong>Average Humidity:</strong> ${avghumidity}%</p>
+              <p><strong>Max Wind Speed:</strong> ${maxwind_kph} km/h</p>
+            </div>
+`         ;    
         });
 
         weatherCard.innerHTML = weatherHTML;
