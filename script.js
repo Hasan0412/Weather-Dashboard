@@ -14,7 +14,9 @@ function getWeather() {
       if (data.error) {
         weatherCard.innerHTML = `<p>${data.error.message}</p>`;
       } else {
-        const { name, country, temp_c, condition, humidity, wind_kph } = data.current;
+        const { temp_c, condition, humidity, wind_kph } = data.current;
+        const name = data.location.name;
+        const country = data.location.country;
         
         const weatherHTML = `
           <h2>${name}, ${country}</h2>
