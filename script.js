@@ -49,10 +49,18 @@ function getWeather() {
         });
 
         weatherCard.innerHTML = weatherHTML;
+        saveToLocalStorage(city);
       }
     })
     .catch(error => {
       const weatherCard = document.getElementById('weatherCard');
       weatherCard.innerHTML = '<p>An error occurred while fetching the weather data.</p>';
     });
+}
+
+function saveToLocalStorage(city) {
+  const searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+  searchHistory.unshift(city);
+  const uniqueHistory = [...new Set(searchHistory)].slice(0, 5);
+  localStorage.setItem('searchHistory', JSON.stringify(uniqueHistory));
 }
