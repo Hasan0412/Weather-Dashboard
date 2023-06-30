@@ -64,3 +64,18 @@ function saveToLocalStorage(city) {
   const uniqueHistory = [...new Set(searchHistory)].slice(0, 5);
   localStorage.setItem('searchHistory', JSON.stringify(uniqueHistory));
 }
+
+function displaySearchHistory() {
+  const historyList = document.getElementById('historyList');
+  historyList.innerHTML = '';
+
+  const searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+  searchHistory.forEach(city => {
+    const li = document.createElement('li');
+    li.textContent = city;
+    historyList.appendChild(li);
+  });
+}
+
+displaySearchHistory();
