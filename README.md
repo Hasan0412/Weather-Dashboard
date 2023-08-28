@@ -13,7 +13,7 @@ The weather dashboard meets the following acceptance criteria:
 
 ## Screenshot
 
-![screenshot](/Screenshot%202023-06-30%20at%2015.18.45.png)
+![screenshot](./Assets/Screenshots/Screenshot%202023-06-30%20at%2015.18.45.png)
 
 ## Link
 
